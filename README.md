@@ -767,7 +767,7 @@ weather_to_color = {
     
 }
 
-map_osm = folium.Map(location=[39.29, -76.61], zoom_start=5) #This is simply our initial map view/zoom
+#map_osm = folium.Map(location=[39.29, -76.61], zoom_start=5) #This is simply our initial map view/zoom
 
 for index,row in df.iterrows():
         if df.at[index,'fy_declared'] > MAP_YEAR: 
