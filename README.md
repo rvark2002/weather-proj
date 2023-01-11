@@ -801,7 +801,9 @@ for index,row in df.iterrows():
             ).add_to(map_osm)
        
 
-map_osm     #This command will run the map
+#map_osm     #This command will run the map
+
+#Unfortunately Github cannot render folium maps so I had to disable it
 ```
 
 
