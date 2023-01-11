@@ -542,20 +542,57 @@ state_table = pd.read_html(str(data)) #This converts the html table into a data 
 print(state_table)
 ```
 
-
-    ---------------------------------------------------------------------------
-
-    AttributeError                            Traceback (most recent call last)
-
-    <ipython-input-5-b2bb72b1af6b> in <module>
-          9 root = BeautifulSoup( r.content, 'html.parser') #This parses the html that was grabebd from the request above
-         10 
-    ---> 11 data = root.find("body").find("main").findAll("table") #This searches for the a table inside the dataframe
-         12 
-         13 data = str(data)
-
-
-    AttributeError: 'NoneType' object has no attribute 'findAll'
+    [               Place Name   Latitude   Longitude
+    0          Wisconsin, USA  44.500000  -89.500000
+    1      West Virginia, USA  39.000000  -80.500000
+    2        Vermont, the USA  44.000000  -72.699997
+    3          Texas, the USA  31.000000 -100.000000
+    4    South Dakota, the US  44.500000 -100.000000
+    5    Rhode Island, the US  41.700001  -71.500000
+    6          Oregon, the US  44.000000 -120.500000
+    7           New York, USA  43.000000  -75.000000
+    8   New Hampshire, the US  44.000000  -71.500000
+    9        Nebraska, the US  41.500000 -100.000000
+    10         Kansas, the US  38.500000  -98.000000
+    11    Mississippi, the US  33.000000  -90.000000
+    12          Illinois, USA  40.000000  -89.000000
+    13       Delaware, the US  39.000000  -75.500000
+    14    Connecticut, the US  41.599998  -72.699997
+    15       Arkansas, the US  34.799999  -92.199997
+    16           Indiana, USA  40.273502  -86.126976
+    17          Missouri, USA  38.573936  -92.603760
+    18           Florida, USA  27.994402  -81.760254
+    19            Nevada, USA  39.876019 -117.224121
+    20         Maine, the USA  45.367584  -68.972168
+    21          Michigan, USA  44.182205  -84.506836
+    22       Georgia, the USA  33.247875  -83.441162
+    23            Hawaii, USA  19.741755 -155.844437
+    24            Alaska, USA  66.160507 -153.369141
+    25         Tennessee, USA  35.860119  -86.660156
+    26          Virginia, USA  37.926868  -78.024902
+    27        New Jersey, USA  39.833851  -74.871826
+    28          Kentucky, USA  37.839333  -84.270020
+    29      North Dakota, USA  47.650589 -100.437012
+    30         Minnesota, USA  46.392410  -94.636230
+    31      Oklahoma, the USA  36.084621  -96.921387
+    32           Montana, USA  46.965260 -109.533691
+    33    Washington, the USA  47.751076 -120.740135
+    34              Utah, USA  39.419220 -111.950684
+    35          Colorado, USA  39.113014 -105.358887
+    36              Ohio, USA  40.367474  -82.996216
+    37           Alabama, USA  32.318230  -86.902298
+    38          Iowa, the USA  42.032974  -93.581543
+    39        New Mexico, USA  34.307144 -106.018066
+    40    South Carolina, USA  33.836082  -81.163727
+    41      Pennsylvania, USA  41.203323  -77.194527
+    42           Arizona, USA  34.048927 -111.093735
+    43          Maryland, USA  39.045753  -76.641273
+    44     Massachusetts, USA  42.407211  -71.382439
+    45    California, the USA  36.778259 -119.417931
+    46             Idaho, USA  44.068203 -114.742043
+    47           Wyoming, USA  43.075970 -107.290283
+    48    North Carolina, USA  35.782169  -80.793457
+    49         Louisiana, USA  30.391830  -92.329102]
 
 
 ## Modifying the table
@@ -645,6 +682,59 @@ for i, row in state_df.iterrows():
 print(state_df)
 ```
 
+       Place Name   Latitude   Longitude
+    0          WI  44.500000  -89.500000
+    1          WV  39.000000  -80.500000
+    2          VT  44.000000  -72.699997
+    3          TX  31.000000 -100.000000
+    4          SD  44.500000 -100.000000
+    5          RI  41.700001  -71.500000
+    6          OR  44.000000 -120.500000
+    7          NY  43.000000  -75.000000
+    8          NH  44.000000  -71.500000
+    9          NE  41.500000 -100.000000
+    10         KS  38.500000  -98.000000
+    11         MS  33.000000  -90.000000
+    12         IL  40.000000  -89.000000
+    13         DE  39.000000  -75.500000
+    14         CT  41.599998  -72.699997
+    15         AR  34.799999  -92.199997
+    16         IN  40.273502  -86.126976
+    17         MO  38.573936  -92.603760
+    18         FL  27.994402  -81.760254
+    19         NV  39.876019 -117.224121
+    20         ME  45.367584  -68.972168
+    21         MI  44.182205  -84.506836
+    22         GA  33.247875  -83.441162
+    23         HI  19.741755 -155.844437
+    24         AK  66.160507 -153.369141
+    25         TN  35.860119  -86.660156
+    26         VA  37.926868  -78.024902
+    27         NJ  39.833851  -74.871826
+    28         KY  37.839333  -84.270020
+    29         ND  47.650589 -100.437012
+    30         MN  46.392410  -94.636230
+    31         OK  36.084621  -96.921387
+    32         MT  46.965260 -109.533691
+    33         WA  47.751076 -120.740135
+    34         UT  39.419220 -111.950684
+    35         CO  39.113014 -105.358887
+    36         OH  40.367474  -82.996216
+    37         AL  32.318230  -86.902298
+    38         IA  42.032974  -93.581543
+    39         NM  34.307144 -106.018066
+    40         SC  33.836082  -81.163727
+    41         PA  41.203323  -77.194527
+    42         AZ  34.048927 -111.093735
+    43         MD  39.045753  -76.641273
+    44         MA  42.407211  -71.382439
+    45         CA  36.778259 -119.417931
+    46         ID  44.068203 -114.742043
+    47         WY  43.075970 -107.290283
+    48         NC  35.782169  -80.793457
+    49         LA  30.391830  -92.329102
+
+
 ## Plotting the points (2017-2020)!
 
 Great now that we have redid the table so that its in state abbreviation form, lets plot our points! 
@@ -679,36 +769,36 @@ We are going to use foliums map tool to create this
 
 # #map_osm = folium.Map(location=[39.29, -76.61], zoom_start=5) #This is simply our initial map view/zoom
 
-# # for index,row in df.iterrows():
-# #         if df.at[index,'fy_declared'] > MAP_YEAR: 
+# for index,row in df.iterrows():
+#         if df.at[index,'fy_declared'] > MAP_YEAR: 
             
-# #             #This grabs the color that will be used when plotting. This is based on the dictionary above
-# #             color = weather_to_color[df.at[index,'incident_type']]
+#             #This grabs the color that will be used when plotting. This is based on the dictionary above
+#             color = weather_to_color[df.at[index,'incident_type']]
             
-# #             #This just grabs the state name for convenience
-# #             state = df.at[index,'state']
+#             #This just grabs the state name for convenience
+#             state = df.at[index,'state']
             
-# #             #This description above will be what is shown once it is clicked upon
-# #             desc = 'Incident: '+df.at[index,'incident_type']+'\nState: '+state+'\nDate: '+df.at[index,'declaration_date']+'\nFema Declaration '+df.at[index,'fema_declaration_string'] 
+#             #This description above will be what is shown once it is clicked upon
+#             desc = 'Incident: '+df.at[index,'incident_type']+'\nState: '+state+'\nDate: '+df.at[index,'declaration_date']+'\nFema Declaration '+df.at[index,'fema_declaration_string'] 
             
             
-# #             lat = "15" #random value - changed anyway
-# #             long = "145" #random value - changed anyway
+#             lat = "15" #random value - changed anyway
+#             long = "145" #random value - changed anyway
             
-# #             randomval1 = random.uniform(-1.25,1.25)
-# #             randomval2 = random.uniform(-1.25,1.25)
-# #             #these two random values are to prevent clutter since values will all start at middle of state
-# #             #What we will do is add the latitude and longitude randomly by this value (x,y)
+#             randomval1 = random.uniform(-1.25,1.25)
+#             randomval2 = random.uniform(-1.25,1.25)
+#             #these two random values are to prevent clutter since values will all start at middle of state
+#             #What we will do is add the latitude and longitude randomly by this value (x,y)
         
-# #             for j,r in state_df.iterrows():
-# #                 if state_df.at[j,'Place Name'] == state:
-# #                     lat = str(float(state_df.at[j,'Latitude']) + randomval1)
-# #                     long = str(float(state_df.at[j,'Longitude']) + randomval2)
-# #             folium.Marker(
-# #             location=[lat,long],
-# #             popup=str(desc),
-# #             icon=folium.Icon(color=color),
-# #             ).add_to(map_osm)
+#             for j,r in state_df.iterrows():
+#                 if state_df.at[j,'Place Name'] == state:
+#                     lat = str(float(state_df.at[j,'Latitude']) + randomval1)
+#                     long = str(float(state_df.at[j,'Longitude']) + randomval2)
+#             folium.Marker(
+#             location=[lat,long],
+#             popup=str(desc),
+#             icon=folium.Icon(color=color),
+#             ).add_to(map_osm)
        
 
 # #map_osm     #This command will run the map
@@ -821,6 +911,22 @@ plot = sdf.plot.pie(y=1,labels = sdf[0],figsize=(8, 8))
 plot
 print(sdf)
 ```
+
+           0     1
+    6  other  3008
+    0     TX   357
+    2     CA   348
+    3     OK   197
+    5     WA   182
+    1     FL   159
+    4     OR   136
+
+
+
+    
+![png](output_26_1.png)
+    
+
 
 Looking at the totals above, we can tell that Texas has had the most disasters from 1953-2021, however lets take a closer look by analyzing this based on time periods.
 
@@ -950,6 +1056,86 @@ print('2006 - 2021')
 print(sdf)
 ```
 
+    1953 - 1970
+            0    1
+    12  other  163
+    0      TX   17
+    3      CA   16
+    1      IA   10
+    5      WV    9
+    6      NY    9
+    9      KY    9
+    10     AR    9
+    2      FL    8
+    4      NV    8
+    7      NC    8
+    8      ID    8
+    11     MN    8
+    1971 - 1988
+           0    1
+    6  other  510
+    1     CA   35
+    4     TX   31
+    0     OK   24
+    2     OR   22
+    5     LA   22
+    3     MS   21
+    1989 - 2005
+            0    1
+    12  other  791
+    0      TX  153
+    6      FL   84
+    4      CA   78
+    1      WA   53
+    3      CO   41
+    9      AZ   41
+    5      AL   40
+    11     NV   39
+    7      OR   36
+    10     NY   34
+    8      OK   32
+    2      ME   31
+    2006 - 2021
+            0    1
+    12  other  980
+    0      CA  218
+    4      TX  156
+    3      OK  134
+    9      WA  103
+    8      OR   72
+    1      FL   48
+    11     MT   48
+    10     AZ   47
+    5      NM   46
+    7      NV   43
+    2      KS   42
+    6      CO   42
+
+
+
+    
+![png](output_29_1.png)
+    
+
+
+
+    
+![png](output_29_2.png)
+    
+
+
+
+    
+![png](output_29_3.png)
+    
+
+
+
+    
+![png](output_29_4.png)
+    
+
+
 Pie Charts Analyzed - 
 
 When comparing the 5 pie charts (including total one above) next to each other, we can see that Texas and California were both consistently the two states with the most disasters. However, Disasters seem to be increasing dramatically in recent years. Take Texas for instance, in the 1953-1971 it received less than 20 disasters, while 156 in 2006-2021. Texas is not the only state seeing this trend. Lets look at this closer
@@ -993,6 +1179,159 @@ pdf.tail()
 
 ```
 
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>type</th>
+      <th>Coastal Storm</th>
+      <th>Drought</th>
+      <th>Earthquake</th>
+      <th>Fire</th>
+      <th>Flood</th>
+      <th>Freezing</th>
+      <th>Hurricane</th>
+      <th>Mud/Landslide</th>
+      <th>Severe Ice Storm</th>
+      <th>Severe Storm(s)</th>
+      <th>Snow</th>
+      <th>Tornado</th>
+      <th>Tsunami</th>
+      <th>Typhoon</th>
+      <th>totals</th>
+    </tr>
+    <tr>
+      <th>year</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2018</th>
+      <td>3.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>70.0</td>
+      <td>18.0</td>
+      <td>0.0</td>
+      <td>18.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>16.0</td>
+      <td>3.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>3.0</td>
+      <td>133</td>
+    </tr>
+    <tr>
+      <th>2019</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>3.0</td>
+      <td>17.0</td>
+      <td>29.0</td>
+      <td>0.0</td>
+      <td>17.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>28.0</td>
+      <td>0.0</td>
+      <td>2.0</td>
+      <td>0.0</td>
+      <td>3.0</td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <th>2020</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>3.0</td>
+      <td>88.0</td>
+      <td>6.0</td>
+      <td>0.0</td>
+      <td>22.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>23.0</td>
+      <td>0.0</td>
+      <td>3.0</td>
+      <td>0.0</td>
+      <td>2.0</td>
+      <td>148</td>
+    </tr>
+    <tr>
+      <th>2021</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>47.0</td>
+      <td>8.0</td>
+      <td>0.0</td>
+      <td>32.0</td>
+      <td>1.0</td>
+      <td>12.0</td>
+      <td>14.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>117</td>
+    </tr>
+    <tr>
+      <th>2022</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>2.0</td>
+      <td>2.0</td>
+      <td>0.0</td>
+      <td>4.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>8</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
 ## Plotting Total Number of Natural Disasters over Time
 
 Here we are going to plot the total number of Natural Disasters over Time. This can be easily be done by using the totals column that we made in the previous bit of code
@@ -1006,6 +1345,19 @@ pdf['year'] = years
 pdf.drop(pdf[pdf['year'] ==2021].index, inplace = True)
 pdf.plot(x = 'year', y = 'totals', kind='scatter',title= 'Total Number of Natural Disasters per Year')
 ```
+
+
+
+
+    <AxesSubplot:title={'center':'Total Number of Natural Disasters per Year'}, xlabel='year', ylabel='totals'>
+
+
+
+
+    
+![png](output_34_1.png)
+    
+
 
 ## Linear Regression of Total Number of Natural Disasters over Time
 
@@ -1027,6 +1379,22 @@ print (str(reg.coef_[0][0])+ 'x '+ str(reg.intercept_[0])) #This prints the line
 plt.scatter(x,y)
 plt.plot(x, y_pred, color='red')
 ```
+
+    1.9214309482435339x -3756.0270830142244
+
+
+
+
+
+    [<matplotlib.lines.Line2D at 0x7fe93f50a0a0>]
+
+
+
+
+    
+![png](output_36_2.png)
+    
+
 
 As you can see above, the amount of Natural Disasters in the US is increasing over time. 
 
@@ -1055,6 +1423,90 @@ for elem in pdf:
 
 
 ```
+
+
+    
+![png](output_39_0.png)
+    
+
+
+
+    
+![png](output_39_1.png)
+    
+
+
+
+    
+![png](output_39_2.png)
+    
+
+
+
+    
+![png](output_39_3.png)
+    
+
+
+
+    
+![png](output_39_4.png)
+    
+
+
+
+    
+![png](output_39_5.png)
+    
+
+
+
+    
+![png](output_39_6.png)
+    
+
+
+
+    
+![png](output_39_7.png)
+    
+
+
+
+    
+![png](output_39_8.png)
+    
+
+
+
+    
+![png](output_39_9.png)
+    
+
+
+
+    
+![png](output_39_10.png)
+    
+
+
+
+    
+![png](output_39_11.png)
+    
+
+
+
+    
+![png](output_39_12.png)
+    
+
+
+
+    
+![png](output_39_13.png)
+    
+
 
 ## Analysis of Graphs
 
@@ -1111,6 +1563,69 @@ us_temp = pd.read_csv("110-tavg-12-1-1953-2021.csv")
 us_temp.head()
 ```
 
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>Value</th>
+      <th>Anomaly</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>195301</td>
+      <td>52.64</td>
+      <td>0.62</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>195401</td>
+      <td>52.90</td>
+      <td>0.88</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>195501</td>
+      <td>53.20</td>
+      <td>1.18</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>195601</td>
+      <td>51.83</td>
+      <td>-0.19</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>195701</td>
+      <td>52.01</td>
+      <td>-0.01</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
 We will be adding the column with temperatures by year to our previously made dataset: pdf
 
 
@@ -1122,6 +1637,19 @@ x = pdf['year'].values.reshape(-1, 1)
 y = pdf['temps'].values.reshape(-1, 1)
 plt.scatter(x,y)
 ```
+
+
+
+
+    <matplotlib.collections.PathCollection at 0x7fe93ff66b80>
+
+
+
+
+    
+![png](output_44_1.png)
+    
+
 
 We can observe from the plot that the temperatures seem to be continually increasing since the mid 1960s after an initial drop. The temperature has an increasing nature similar to that of number of natural disasters. Now let's quantify the correlation between the fluctuations in temperatre and number of natural disasters by finding the correlation coeficient between the two. There is a function included in pandas which can calculate it.
 
@@ -1137,6 +1665,9 @@ column_2 = pdf["temps"]
 correlation = column_1.corr(column_2)
 print(correlation)
 ```
+
+    0.5187398771670896
+
 
 We can see that there exists a positive correlation between the total amount of natural disasters and average temperature by year. 
 
@@ -1163,9 +1694,117 @@ cor_df
 ```
 
 
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>disaster</th>
+      <th>correlation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Coastal Storm</td>
+      <td>0.245422</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Drought</td>
+      <td>-0.235949</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Earthquake</td>
+      <td>0.081626</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Fire</td>
+      <td>0.545431</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Flood</td>
+      <td>-0.294248</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Freezing</td>
+      <td>-0.113145</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Hurricane</td>
+      <td>0.472132</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Mud/Landslide</td>
+      <td>0.272220</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Severe Ice Storm</td>
+      <td>0.187172</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Severe Storm(s)</td>
+      <td>0.458109</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Snow</td>
+      <td>0.139731</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Tornado</td>
+      <td>-0.161227</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Tsunami</td>
+      <td>0.039634</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Typhoon</td>
+      <td>0.205830</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
 ```python
 barp = cor_df.plot.bar('disaster', 'correlation',title='Correlation Between Temperature and Disaster')
 ```
+
+
+    
+![png](output_49_0.png)
+    
+
 
 ## Conclusion from the relationship between temperature and number of natural disasters
 
@@ -1223,6 +1862,90 @@ for disaster in pdf:
         plt.ylabel('Number of '+disaster)
         plt.show()
 ```
+
+
+    
+![png](output_52_0.png)
+    
+
+
+
+    
+![png](output_52_1.png)
+    
+
+
+
+    
+![png](output_52_2.png)
+    
+
+
+
+    
+![png](output_52_3.png)
+    
+
+
+
+    
+![png](output_52_4.png)
+    
+
+
+
+    
+![png](output_52_5.png)
+    
+
+
+
+    
+![png](output_52_6.png)
+    
+
+
+
+    
+![png](output_52_7.png)
+    
+
+
+
+    
+![png](output_52_8.png)
+    
+
+
+
+    
+![png](output_52_9.png)
+    
+
+
+
+    
+![png](output_52_10.png)
+    
+
+
+
+    
+![png](output_52_11.png)
+    
+
+
+
+    
+![png](output_52_12.png)
+    
+
+
+
+    
+![png](output_52_13.png)
+    
+
 
 We can use these linear models to possibly predict how many of each disaster will increase as temperature increases. Temperature might be a better variable for number of natural disasters to depend on. However, as previously mentioned, just because there exists correlation between temperature and number of natural disasters does not mean it is the cause. There are many factors which go into natural disasters. Temperature might seem like one, which is more relevant to some types of disasters over other. 
 
